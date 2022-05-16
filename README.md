@@ -62,15 +62,15 @@ Silahkan ikuti instruksi dibawah ini untuk menjalankan project ini :
 
 Akun default admin:
 
-**Email : ** `admin@site.com`
+**Email :** `admin@site.com`
 
-**Password : ** `password`
+**Password :** `password`
 
 Akun default user:
 
-**Email : ** `user@site.com`
+**Email :** `user@site.com`
 
-**Password : ** `password`
+**Password :** `password`
 
 ## Reference
 
