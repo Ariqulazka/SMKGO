@@ -5,20 +5,20 @@ namespace App\Models;
 use \DateTimeInterface;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
+// use Illuminate\Database\Eloquent\SoftDeletes;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class School extends Model implements HasMedia
 {
-    use SoftDeletes;
+    // use SoftDeletes;
     use InteractsWithMedia;
     use HasFactory;
 
     public const TYPE_RADIO = [
-        'private' => 'Swasta',
-        'state'   => 'Negeri',
+        'Swasta' => 'Swasta',
+        'Negeri'   => 'Negeri',
     ];
 
     public $table = 'schools';

@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.edit') }} {{ trans('cruds.school.title_singular') }}
+        Edit Sekolah
     </div>
 
     <div class="card-body">
@@ -11,14 +11,14 @@
             @method('PUT')
             @csrf
             <div class="form-group">
-                <label class="required" for="school_name">{{ trans('cruds.school.fields.school_name') }}</label>
+                <label class="required" for="school_name">Sekolah</label>
                 <input class="form-control {{ $errors->has('school_name') ? 'is-invalid' : '' }}" type="text" name="school_name" id="school_name" value="{{ old('school_name', $school->school_name) }}" required>
                 @if($errors->has('school_name'))
                     <div class="invalid-feedback">
                         {{ $errors->first('school_name') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.school_name_helper') }}</span>
+                <span class="help-block">Masukka nama sekolah</span>
             </div>
             <div class="form-group">
                 <label class="required" for="thumbnail_school">{{ trans('cruds.school.fields.thumbnail_school') }}</label>
@@ -96,11 +96,11 @@
                         {{ $errors->first('majors') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.major_helper') }}</span>
+                <span class="help-block">Pilih jurusan yang terdapat pada sekolah Anda</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                    Simpan
                 </button>
             </div>
         </form>

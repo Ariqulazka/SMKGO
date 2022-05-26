@@ -19,20 +19,20 @@
                         <div class="py-4">
                             <h4>{{ $school->school_name }}</h4>
                             <ul>
-                                <li><strong>{{ trans('global.address') }} :</strong> {{ $school->address }}</li>
-                                <li><strong>{{ trans('global.contacts') }} :</strong> {{ $school->contact }}
+                                <li><strong>Alamat :</strong> {{ $school->address }}</li>
+                                <li><strong>Kontak :</strong> {{ $school->contact }}
                                 </li>
-                                <li><strong>{{ trans('global.school_type') }} :</strong> {{ $school->type }}
+                                <li><strong>{{ trans('Tipe Sekolah') }} :</strong> {{ $school->type }}
                                 </li>
                                 {{-- <li><strong>{{ trans('global.author') }} :</strong> {{ $school->author->name }}
                                 </li> --}}
-                                <li><strong>{{ trans('global.created_at') }}
+                                <li><strong>Dibuat pada
                                         :</strong> {{ $school->created_at }}
                                 </li>
-                                <li><strong>{{ trans('global.updated_at') }}
+                                <li><strong>Diperbarui pada
                                         :</strong> {{ $school->updated_at }}
                                 </li>
-                                <li><strong>{{ trans('global.major') }} : </strong>
+                                <li><strong>Jurusan : </strong>
                                     @foreach ($school->majors as $major)
                                         <a class="text-decoration-none text-light"
                                             href="{{ route('admin.majors.show', $major->id) }}"><span
@@ -54,7 +54,7 @@
 
     <div class="row text-center">
         <div class="col">
-            {{ $schools->withQueryString()->links() }}
+            {{ $schools->withQueryString()->links('pagination::bootstrap-4') }}
         </div>
     </div>
 </div>

@@ -3,21 +3,17 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.show') }} {{ trans('cruds.school.title') }}
+        Tampilkan sekolah
     </div>
 
     <div class="card-body">
         <div class="form-group">
-            <div class="form-group">
-                <a class="btn btn-default" href="{{ route('admin.schools.index') }}">
-                    {{ trans('global.back_to_list') }}
-                </a>
-            </div>
             <table class="table table-bordered table-striped">
                 <tbody>
                     <tr>
+
                         <th>
-                            {{ trans('cruds.school.fields.id') }}
+                            ID
                         </th>
                         <td>
                             {{ $school->id }}
@@ -25,7 +21,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.school_name') }}
+                            Nama Sekolah
                         </th>
                         <td>
                             {{ $school->school_name }}
@@ -33,7 +29,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.thumbnail_school') }}
+                            Thumbnail Sekolah
                         </th>
                         <td>
                             @if($school->thumbnail_school)
@@ -45,7 +41,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.address') }}
+                            Alamat
                         </th>
                         <td>
                             {{ $school->address }}
@@ -53,7 +49,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.contact') }}
+                            Kontak
                         </th>
                         <td>
                             {{ $school->contact }}
@@ -61,7 +57,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.type') }}
+                            Tipe
                         </th>
                         <td>
                             {{ App\Models\School::TYPE_RADIO[$school->type] ?? '' }}
@@ -69,7 +65,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.author') }}
+                            Pembuat
                         </th>
                         <td>
                             {{ $school->author->name ?? '' }}
@@ -77,7 +73,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('cruds.school.fields.major') }}
+                            Jurusan
                         </th>
                         <td>
                             @foreach($school->majors as $key => $major)
@@ -89,7 +85,7 @@
             </table>
             <div class="form-group">
                 <a class="btn btn-default" href="{{ route('admin.schools.index') }}">
-                    {{ trans('global.back_to_list') }}
+                    Kembali ke daftar
                 </a>
             </div>
         </div>

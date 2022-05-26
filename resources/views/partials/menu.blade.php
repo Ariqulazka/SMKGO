@@ -1,10 +1,11 @@
 <div id="sidebar" class="c-sidebar c-sidebar-fixed c-sidebar-lg-show">
 
     <div class="c-sidebar-brand d-md-down-none">
-        <a class="c-sidebar-brand-full h4 text-decoration-none" href="{{ route('admin.home') }}">
+        <a class="material-icons c-sidebar-brand-full h4 text-decoration-none" href="/">
             {{ trans('panel.site_title') }}
         </a>
     </div>
+
 
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
@@ -12,7 +13,7 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
 
                 </i>
-                {{ trans('global.dashboard') }}
+                Dashboard
             </a>
         </li>
         @can('major_access')
@@ -22,7 +23,7 @@
                     <i class="fa-fw fas fa-rocket c-sidebar-nav-icon">
 
                     </i>
-                    {{ trans('cruds.major.title') }}
+                    Jurusan
                 </a>
             </li>
         @endcan
@@ -33,7 +34,7 @@
                     <i class="fa-fw fas fa-school c-sidebar-nav-icon">
 
                     </i>
-                    {{ trans('cruds.school.title') }}
+                    Sekolah
                 </a>
             </li>
         @endcan
@@ -44,7 +45,7 @@
                     <i class="fa-fw fas fa-users c-sidebar-nav-icon">
 
                     </i>
-                    {{ trans('cruds.userManagement.title') }}
+                    Manajemen User
                 </a>
                 <ul class="c-sidebar-nav-dropdown-items">
                     @can('permission_access')
@@ -54,7 +55,7 @@
                                 <i class="fa-fw fas fa-unlock-alt c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.permission.title') }}
+                                Izin
                             </a>
                         </li>
                     @endcan
@@ -65,7 +66,7 @@
                                 <i class="fa-fw fas fa-briefcase c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.role.title') }}
+                                Peranan
                             </a>
                         </li>
                     @endcan
@@ -76,7 +77,7 @@
                                 <i class="fa-fw fas fa-user c-sidebar-nav-icon">
 
                                 </i>
-                                {{ trans('cruds.user.title') }}
+                                Daftar Pengguna
                             </a>
                         </li>
                     @endcan
@@ -90,7 +91,7 @@
                         href="{{ route('profile.password.edit') }}">
                         <i class="fa-fw fas fa-key c-sidebar-nav-icon">
                         </i>
-                        {{ trans('global.change_password') }}
+                        Profil
                     </a>
                 </li>
             @endcan
@@ -101,7 +102,7 @@
                 <i class="c-sidebar-nav-icon fas fa-fw fa-sign-out-alt">
 
                 </i>
-                {{ trans('global.logout') }}
+                Log Out
             </a>
         </li>
     </ul>

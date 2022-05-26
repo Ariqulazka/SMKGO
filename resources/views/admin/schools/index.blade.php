@@ -4,18 +4,19 @@
     <div style="margin-bottom: 10px;" class="row">
         <div class="col-lg-12">
             <a class="btn btn-success" href="{{ route('admin.schools.create') }}">
-                {{ trans('global.add') }} {{ trans('cruds.school.title_singular') }}
+                Tambah Sekolah
             </a>
             <button class="btn btn-warning" data-toggle="modal" data-target="#csvImportModal">
-                {{ trans('global.app_csvImport') }}
+                Impor CSV
             </button>
             @include('csvImport.modal', ['model' => 'School', 'route' => 'admin.schools.parseCsvImport'])
         </div>
     </div>
 @endcan
+<?php $no = 1; ?>
 <div class="card">
     <div class="card-header">
-        {{ trans('cruds.school.title_singular') }} {{ trans('global.list') }}
+        Daftar Sekolah
     </div>
 
     <div class="card-body">
@@ -147,20 +148,21 @@
     retrieve: true,
     aaSorting: [],
     ajax: "{{ route('admin.schools.index') }}",
+
     columns: [
-      { data: 'placeholder', name: 'placeholder' },
-{ data: 'id', name: 'id' },
-{ data: 'school_name', name: 'school_name' },
-{ data: 'thumbnail_school', name: 'thumbnail_school', sortable: false, searchable: false },
-{ data: 'address', name: 'address' },
-{ data: 'contact', name: 'contact' },
-{ data: 'type', name: 'type' },
-{ data: 'author_name', name: 'author.name' },
-{ data: 'major', name: 'majors.name' },
-{ data: 'actions', name: '{{ trans('global.actions') }}' }
+        { data: 'placeholder', name: 'placeholder' },
+        { data: 'id', name: 'id' },
+        { data: 'school_name', name: 'school_name' },
+        { data: 'thumbnail_school', name: 'thumbnail_school', sortable: false, searchable: false },
+        { data: 'address', name: 'address' },
+        { data: 'contact', name: 'contact' },
+        { data: 'type', name: 'type' },
+        { data: 'author_name', name: 'Pembuat' },
+        { data: 'major', name: 'majors.name' },
+        { data: 'actions', name: '{{ trans('global.actions') }}' }
     ],
     orderCellsTop: true,
-    order: [[ 1, 'desc' ]],
+    order: [[ 1, 'asc' ]],
     pageLength: 25,
   };
   let table = $('.datatable-School').DataTable(dtOverrideGlobals);
@@ -168,7 +170,7 @@
       $($.fn.dataTable.tables(true)).DataTable()
           .columns.adjust();
   });
-  
+
 let visibleColumnsIndexes = null;
 $('.datatable thead').on('input', '.search', function () {
       let strict = $(this).attr('strict') || false

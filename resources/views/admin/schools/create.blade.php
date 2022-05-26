@@ -3,24 +3,24 @@
 
 <div class="card">
     <div class="card-header">
-        {{ trans('global.create') }} {{ trans('cruds.school.title_singular') }}
+        <P>Tambah Sekolah</P>
     </div>
 
     <div class="card-body">
         <form method="POST" action="{{ route("admin.schools.store") }}" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
-                <label class="required" for="school_name">{{ trans('cruds.school.fields.school_name') }}</label>
+                <label class="required" for="school_name">Nama Sekolah</label>
                 <input class="form-control {{ $errors->has('school_name') ? 'is-invalid' : '' }}" type="text" name="school_name" id="school_name" value="{{ old('school_name', '') }}" required>
                 @if($errors->has('school_name'))
                     <div class="invalid-feedback">
                         {{ $errors->first('school_name') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.school_name_helper') }}</span>
+                <span class="help-block">Masukkan nama sekolah</span>
             </div>
             <div class="form-group">
-                <label class="required" for="thumbnail_school">{{ trans('cruds.school.fields.thumbnail_school') }}</label>
+                <label class="required" for="thumbnail_school">Thumbnail sekolah</label>
                 <div class="needsclick dropzone {{ $errors->has('thumbnail_school') ? 'is-invalid' : '' }}" id="thumbnail_school-dropzone">
                 </div>
                 @if($errors->has('thumbnail_school'))
@@ -28,33 +28,33 @@
                         {{ $errors->first('thumbnail_school') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.thumbnail_school_helper') }}</span>
+                <span class="help-block">Masukkan thumbnail sekolah</span>
             </div>
             <div class="form-group">
-                <label class="required" for="address">{{ trans('cruds.school.fields.address') }}</label>
+                <label class="required" for="address">Alamat sekolah</label>
                 <input class="form-control {{ $errors->has('address') ? 'is-invalid' : '' }}" type="text" name="address" id="address" value="{{ old('address', '') }}" required>
                 @if($errors->has('address'))
                     <div class="invalid-feedback">
                         {{ $errors->first('address') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.address_helper') }}</span>
+                <span class="help-block">Masukkan alamat sekolah</span>
             </div>
             <div class="form-group">
-                <label class="required" for="contact">{{ trans('cruds.school.fields.contact') }}</label>
+                <label class="required" for="contact">Kontak</label>
                 <input class="form-control {{ $errors->has('contact') ? 'is-invalid' : '' }}" type="text" name="contact" id="contact" value="{{ old('contact', '') }}" required>
                 @if($errors->has('contact'))
                     <div class="invalid-feedback">
                         {{ $errors->first('contact') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.contact_helper') }}</span>
+                <span class="help-block">Masukkan kontak sekolah yang dapat dihubungi</span>
             </div>
             <div class="form-group">
-                <label class="required">{{ trans('cruds.school.fields.type') }}</label>
+                <label class="required">Tipe</label>
                 @foreach(App\Models\School::TYPE_RADIO as $key => $label)
                     <div class="form-check {{ $errors->has('type') ? 'is-invalid' : '' }}">
-                        <input class="form-check-input" type="radio" id="type_{{ $key }}" name="type" value="{{ $key }}" {{ old('type', 'Negeri') === (string) $key ? 'checked' : '' }} required>
+                        <input class="form-check-input" type="radio" id="type_{{ $key }}" name="type" value="{{ $label }}" {{ old('type', 'Negeri') === (string) $key ? 'checked' : '' }} required>
                         <label class="form-check-label" for="type_{{ $key }}">{{ $label }}</label>
                     </div>
                 @endforeach
@@ -63,10 +63,10 @@
                         {{ $errors->first('type') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.type_helper') }}</span>
+                <span class="help-block">Pilih tipe sekolah (default:Negeri)</span>
             </div>
             <div class="form-group">
-                <label class="required" for="author_id">{{ trans('cruds.school.fields.author') }}</label>
+                <label class="required" for="author_id">Pembuat</label>
                 <select class="form-control select2 {{ $errors->has('author') ? 'is-invalid' : '' }}" name="author_id" id="author_id" required>
                     @foreach($authors as $id => $entry)
                         <option value="{{ $id }}" {{ old('author_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
@@ -77,10 +77,10 @@
                         {{ $errors->first('author') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.author_helper') }}</span>
+                <span class="help-block">Pilih nama pembuat untuk data sekolah ini</span>
             </div>
             <div class="form-group">
-                <label class="required" for="majors">{{ trans('cruds.school.fields.major') }}</label>
+                <label class="required" for="majors">Jurusan</label>
                 <div style="padding-bottom: 4px">
                     <span class="btn btn-info btn-xs select-all" style="border-radius: 0">{{ trans('global.select_all') }}</span>
                     <span class="btn btn-info btn-xs deselect-all" style="border-radius: 0">{{ trans('global.deselect_all') }}</span>
@@ -95,11 +95,11 @@
                         {{ $errors->first('majors') }}
                     </div>
                 @endif
-                <span class="help-block">{{ trans('cruds.school.fields.major_helper') }}</span>
+                <span class="help-block">Pilih jurusan yang terdapat pada sekolah Anda</span>
             </div>
             <div class="form-group">
                 <button class="btn btn-danger" type="submit">
-                    {{ trans('global.save') }}
+                    Simpan
                 </button>
             </div>
         </form>

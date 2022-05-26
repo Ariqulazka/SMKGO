@@ -21,7 +21,7 @@ return [
     ],
     'boolean'          => ':attribute field harus bernilai \"true\" atau \"false\".',
     'confirmed'        => 'konfirmasi :attribute tidak cocok.',
-    'current_password' => 'The password is incorrect.',
+    'current_password' => 'Password salah.',
     'date'             => ':attribuet bukan tanggal yang valid',
     'date_equals'      => ':attribute harus sesuai dengan :date.',
     'date_format'      => ':attribute tidak cocok dengan format standar :format',
