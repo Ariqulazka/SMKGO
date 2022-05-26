@@ -9,7 +9,7 @@ Silahkan ikuti instruksi dibawah ini untuk menjalankan project ini :
 1. Clone project ini pada komputer Anda. Pastikan sudah terinstall git.
 
     ```bash
-    git clone https://github.com/IhsanDevs/SMKGO.git
+    https://github.com/Ariqulazka/SMKGO.git
     ```
 
 2. Buka terminal Anda pada project ini. Gunakan command :
